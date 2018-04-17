@@ -9,14 +9,34 @@ import java.util.Scanner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * Clase principal que muestra al usuario las opciones que puede
+ * elegir para realizar operaciones en la base de datos.
+ *
+ * @version 0.0.1
+ *
+ * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx%gt;
+ *
+ * @since 0.0.1
+ *
+ */
+
 public class MainApp {
 
+    /**
+     * Este es el método principal con el que corre la aplicación para el manejo
+     * de la base de datos.
+     *
+     * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+     * 
+     * @param args
+     *
+     * @since 0.0.1
+     */
     public static void main(String args[]) {
-        EmpleadoDTO empleado;
         EmpleadoDAOImpl empDAO;
         CasosMenu casos;
         List<EmpleadoDTO> imprimir;
-        EmpleadoDTO imprimir2;
         int a = 1;
         
         //Muestro el menú alusuario con las opciones que puede realizar en la base de datos.
