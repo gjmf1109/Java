@@ -1,7 +1,16 @@
 package com.dish.mx.dev.dto;
 
-//Creación de mi clase definiendo las variables que también tiene 
-//mi base de datos como atributos.
+/**
+ * Clase en la que definimos los atributos de la tabla a manipular en la base de
+ * datos.
+ *
+ * @version 0.0.1
+ *
+ * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+ *
+ * @since 0.0.1
+ *
+ */
 public class EmpleadoDTO {
 
     private int numEmpleado;
@@ -10,12 +19,30 @@ public class EmpleadoDTO {
     private String fechaActualizacion;
     private String activo;
 
-    //Constructor vacío
+    /**
+     * Constructor vacío de la clase.
+     *
+     * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+     *
+     * @since 0.0.1
+     */
     public EmpleadoDTO() {
 
     }
-    
-    //Constructor para asignar valores a cada una de mis variables
+
+    /**
+     * Constructor de la clase con argumentos.
+     *
+     * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+     * 
+     * @param num_empleado
+     * @param nombre
+     * @param antiguedad
+     * @param fecha
+     * @param activo
+     *
+     * @since 0.0.1
+     */
     public EmpleadoDTO(int num_empleado, String nombre, int antiguedad, String fecha, String activo) {
         this.numEmpleado = num_empleado;
         this.nombre = nombre;
@@ -93,10 +120,10 @@ public class EmpleadoDTO {
     public void setActivo(String activo) {
         this.activo = activo;
     }
-    
+
     //Método con la estructura para imprimir mis resultados
     @Override
     public String toString() {
-        return "numEmpleado="+numEmpleado+"\tnombre="+nombre+"\tantiguedad="+antiguedad+"\tfechaActualizacion="+fechaActualizacion+"\tactivo="+activo+"\n";
+        return "numEmpleado=" + numEmpleado + "\tnombre=" + nombre + "\tantiguedad=" + antiguedad + "\tfechaActualizacion=" + fechaActualizacion + "\tactivo=" + activo + "\n";
     }
 }
