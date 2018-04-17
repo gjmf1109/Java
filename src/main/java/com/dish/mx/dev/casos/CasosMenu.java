@@ -8,25 +8,48 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+/**
+ * Clase en la que definimos métodos para la obtención de datos introducidos por
+ * consola por el usuario.
+ *
+ * @version 0.0.1
+ *
+ * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+ *
+ * @since 0.0.1
+ *
+ */
 @Component
 public class CasosMenu {
 
     private EmpleadoDTO empleado;
     private List<EmpleadoDTO> imprimir;
     private EmpleadoDTO imprimir2;
-    
+
     @Autowired
     @Qualifier("empleadoDAOImpl")
     private EmpleadoDAOImpl empDAO;
-    
 
     private Scanner leer = new Scanner(System.in);
 
+    /**
+     * Constructor vacío de la clase
+     *
+     * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+     *
+     * @since 0.0.1
+     */
     public CasosMenu() {
     }
 
-    //Método para mostrar las opciones al usuario cuando
-    //elige consultar a la base de datos
+    /**
+     * Método en el que se le da al usuario la opción de consultar todos los
+     * elementos de la base de datos o consultar alguno de acuerdo a un id
+     *
+     * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+     *
+     * @since 0.0.1
+     */
     public void consultar() {
         //Le imprimimos al usuario las opciones
         System.out.println("Retornar todos los registros de la tabla --> 1");
@@ -44,12 +67,18 @@ public class CasosMenu {
         }
     }
 
-    //Método para mostrar los pasos que debe seguir el usuario para 
-    //insertar un registro a la base de datos
+    /**
+     * Método en el que se le piden al usuario datos para insertar un registro
+     * en la tabla
+     *
+     * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+     *
+     * @since 0.0.1
+     */
     public void insertar() {
         EmpleadoDTO empleadoInsertar;
         empleadoInsertar = new EmpleadoDTO();
-        
+
         System.out.print("Ingresa el número del empleado: ");
         int num = getLeer().nextInt();
         System.out.print("Ingresa el nombre del empleado: ");
@@ -72,8 +101,14 @@ public class CasosMenu {
         System.out.println(getImprimir());
     }
 
-    //Método que muestra los pasos al usuario para que 
-    //pueda actualizar un registro de la base de datos
+    /**
+     * Método en el que se le piden al usuario datos para actualizar todos o
+     * algunos campos del registro.
+     *
+     * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+     *
+     * @since 0.0.1
+     */
     public void actualizar() {
         int numEmp;
         int resp = 0;
@@ -101,9 +136,15 @@ public class CasosMenu {
         resp = getEmpDAO().actualizarEmpleado(getEmpleado());
         System.out.println("Empleado actualizado!\n Se actualizaron " + resp + " líneas");
     }
-    
-    //Método que muestra los pasos al usuario para eliminar
-    //un registro de la base de datos.
+
+    /**
+     * Método en el que se le da al usuario la opción de eliminar todos los
+     * elementos de la base de datos o eliminar alguno de acuerdo a un id
+     *
+     * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+     *
+     * @since 0.0.1
+     */
     public void eliminar() {
         System.out.println("Eliminar todos los registros de la tabla --> 1");
         System.out.println("Eliminar un registro de la tabla por el número de empleado --> 2");
