@@ -75,11 +75,7 @@ public class AppConfig {
     JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
-
-//    @Bean
-//    JdbcTemplate jdbcTemplate2(DataSource dataSource) {
-//        return new JdbcTemplate(dataSource);
-//    }
+    
     /**
      * Método para poder tener el acceso a los datos de la base
      *
@@ -109,15 +105,5 @@ public class AppConfig {
         EmpleadoDAOImpl dao = new EmpleadoDAOImpl();
         dao.setJdbcTemplate(jdbcTemplate);
         return dao;
-//        return new EmpleadoDAOImpl(jdbcTemplate);
     }
-
-//    @Bean
-//    CasosMenu menuEmpDao(EmpleadoDAOImpl empDAO){
-//        CasosMenu cm = new CasosMenu();
-//        
-//        cm.setEmpDAO(empDAO);
-//        
-//        return cm;
-//    }
 }

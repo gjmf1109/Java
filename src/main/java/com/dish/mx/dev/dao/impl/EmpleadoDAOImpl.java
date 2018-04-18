@@ -39,11 +39,6 @@ public class EmpleadoDAOImpl implements EmpleadoDAO {
     public EmpleadoDAOImpl() {
     }
 
-    //Método para poder utilizar la variable jdbcTemplate y sus métodos 
-//    public EmpleadoDAOImpl(JdbcTemplate jdbcTemplate) {
-//        this.jdbcTemplate = jdbcTemplate;
-//    }
-    
     /**
      * El método ejecuta un query para poder obtener todos los registros de la
      * base de datos
@@ -164,6 +159,17 @@ public class EmpleadoDAOImpl implements EmpleadoDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    /**
+     * El método ejecuta un query para poder insertar registros en la base de
+     * datos, se le pasa una variable de tipo EmpleadoDTO, para después obtener 
+     * los datos de esta variable con los métodos getters y setters.
+     *
+     * @author Gerardo Martinez &lt;gerardo.martinez@dish.com.mx&gt;
+     * 
+     * @param empleado
+     *
+     * @since 0.0.1
+     */
     @Override
     public void insertarEmpleado(EmpleadoDTO empleado) {
         getJdbcTemplate().update("INSERT INTO empleado (num_empleado, nombre, antiguedad, fecha_actualizacion, activo) "
